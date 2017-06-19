@@ -19,6 +19,8 @@ gem 'uglifier'
 gem 'omniauth-facebook'
 gem 'koala'
 gem 'fbgraph'
+gem 'cloudinary'
+gem 'carrierwave', '~> 0.11.2'
 
 group :development, :test do
   gem 'better_errors'
