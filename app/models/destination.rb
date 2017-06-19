@@ -1,3 +1,6 @@
 class Destination < ApplicationRecord
   belongs_to :user
+  has_many :restaurants, dependent: :destroy
+  has_many :hotels, dependent: :destroy
+  has_many :activities, dependent: :destroy
 end
