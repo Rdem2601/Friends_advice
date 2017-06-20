@@ -12,6 +12,14 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
 
+  include PgSearch
+  pg_search_scope :search,
+    against: [ :first_name, :last_name ],
+    associated_against: {
+      destinations: [:name]
+    }
+
+
 
   def self.find_for_facebook_oauth(auth)
     user_params = auth.slice(:provider, :uid)

@@ -14,7 +14,14 @@ class DestinationsController < ApplicationController
   end
 
   def search
-    @destinations = Destination.search(params[:search][:query])
+    @users = User.search(params[:search][:query])
+    @graph = Koala::Facebook::API.new(current_user.token)
+    friends = @graph.get_connections("me", "friends")
+    @my_array = []
+    friends.each do |friend|
+      full_name = friend["name"]
+      @my_array << full_name
+    end
   end
 
   def create
