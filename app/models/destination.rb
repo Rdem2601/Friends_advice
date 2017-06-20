@@ -6,4 +6,8 @@ class Destination < ApplicationRecord
 
   validates :name, presence: true
   validates :date, presence: true
+
+  include PgSearch
+  pg_search_scope :search, against: [:name]
+
 end

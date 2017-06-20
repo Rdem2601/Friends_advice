@@ -3,3 +3,7 @@
 <h2>Créer une nouvelle destination</h2>
 <%= link_to "Créer", new_destination_path %>
 <h2>Chercher une destination</h2>
+<%= simple_form_for(:search, on: :collection, url: search_destinations_path, method: :get) do |f| %>
+  <%= f.input :query, label: false %>
+  <%= f.button :submit, "Chercher" %>
+<% end %>

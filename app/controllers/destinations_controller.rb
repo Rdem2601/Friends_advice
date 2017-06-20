@@ -11,7 +11,10 @@ class DestinationsController < ApplicationController
   end
 
   def show
+  end
 
+  def search
+    @destinations = Destination.search(params[:search][:query])
   end
 
   def create
