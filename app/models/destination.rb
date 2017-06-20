@@ -5,4 +5,5 @@ class Destination < ApplicationRecord
   has_many :activities, dependent: :destroy
 
   validates :name, presence: true
+  validates :date, presence: true
 end
