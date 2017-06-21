@@ -22,6 +22,7 @@ gem 'koala'
 gem 'fbgraph'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
+gem "pundit"
 
 group :development, :test do
   gem 'better_errors'

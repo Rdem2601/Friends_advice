@@ -1,10 +1,10 @@
 <div>
-  <h1> Vos bons conseils pour <%= @destination.name %> </h1>
+  <h1> Les bons conseils de <%= @destination.user.first_name %> <%= @destination.user.last_name %> pour <%= @destination.name %> </h1>
   <h2> <%= @destination.date %> </h2>
 </div>
 
 <div class="results">
-  <h3>Vos bons plans resto</h3>
+  <h3>Les bons plans resto de <%= @destination.user.first_name %> </h3>
     <% unless @destination.restaurants.empty? %>
       <% @destination.restaurants.each do |restaurant| %>
         <%= restaurant.name %>
@@ -15,18 +15,20 @@
     <% end %>
 </div>
 
-<h5>Ajouter un restaurant</h5>
-  <%= simple_form_for [@destination, @restaurant] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :review %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit %>
-  <% end %>
+<% if @destination.user == current_user %>
+  <h5>Ajouter un restaurant</h5>
+    <%= simple_form_for [@destination, @restaurant] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :review %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit %>
+    <% end %>
+<% end %>
 
 <div class="results">
-  <h3>Les meilleures trucs à faire</h3>
+  <h3>Les meilleures trucs à faire d'après <%= @destination.user.first_name %></h3>
     <% unless @destination.activities.empty? %>
       <% @destination.activities.each do |activity| %>
         <%= activity.name %>
@@ -37,18 +39,20 @@
     <% end %>
 </div>
 
-<h5>Ajouter une activité</h5>
-  <%= simple_form_for [@destination, @activity] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :review %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit %>
-  <% end %>
+<% if @destination.user == current_user %>
+  <h5>Ajouter une activité</h5>
+    <%= simple_form_for [@destination, @activity] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :review %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit %>
+    <% end %>
+<% end %>
 
 <div class="results">
-  <h3>Vos bons plans hôtel</h3>
+  <h3>Les bons plans hôtel de <%= @destination.user.first_name %></h3>
     <% unless @destination.hotels.empty? %>
       <% @destination.hotels.each do |hotel| %>
         <%= hotel.name %>
@@ -59,12 +63,14 @@
     <% end %>
 </div>
 
-<h5>Ajouter un hôtel</h5>
-  <%= simple_form_for [@destination, @hotel] do |f| %>
-    <%= f.input :name %>
-    <%= f.input :address %>
-    <%= f.input :review %>
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-    <%= f.button :submit %>
-  <% end %>
+<% if @destination.user == current_user %>
+  <h5>Ajouter un hôtel</h5>
+    <%= simple_form_for [@destination, @hotel] do |f| %>
+      <%= f.input :name %>
+      <%= f.input :address %>
+      <%= f.input :review %>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+      <%= f.button :submit %>
+    <% end %>
+<% end %>
