@@ -17,6 +17,7 @@ class DestinationsController < ApplicationController
   end
 
   def search
+    @destinations = Destination.look(params[:search][:query])
     @users = User.search(params[:search][:query])
     @graph = Koala::Facebook::API.new(current_user.token)
     friends = @graph.get_connections("me", "friends")
