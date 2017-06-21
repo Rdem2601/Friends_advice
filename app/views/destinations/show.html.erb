@@ -16,12 +16,14 @@
 </div>
 
 <h5>Ajouter un restaurant</h5>
-<%= simple_form_for [@destination, @restaurant] do |f| %>
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.input :review %>
-<%= f.button :submit %>
-<% end %>
+  <%= simple_form_for [@destination, @restaurant] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :review %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit %>
+  <% end %>
 
 <div class="results">
   <h3>Les meilleures trucs à faire</h3>
@@ -36,12 +38,14 @@
 </div>
 
 <h5>Ajouter une activité</h5>
-<%= simple_form_for [@destination, @activity] do |f| %>
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.input :review %>
-<%= f.button :submit %>
-<% end %>
+  <%= simple_form_for [@destination, @activity] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :review %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit %>
+  <% end %>
 
 <div class="results">
   <h3>Vos bons plans hôtel</h3>
@@ -56,9 +60,11 @@
 </div>
 
 <h5>Ajouter un hôtel</h5>
-<%= simple_form_for [@destination, @hotel] do |f| %>
-<%= f.input :name %>
-<%= f.input :address %>
-<%= f.input :review %>
-<%= f.button :submit %>
-<% end %>
+  <%= simple_form_for [@destination, @hotel] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :address %>
+    <%= f.input :review %>
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
+    <%= f.button :submit %>
+  <% end %>
