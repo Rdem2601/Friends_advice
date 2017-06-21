@@ -11,6 +11,9 @@ class DestinationsController < ApplicationController
   end
 
   def show
+    @restaurant = Restaurant.new
+    @hotel = Hotel.new
+    @activity = Activity.new
   end
 
   def search

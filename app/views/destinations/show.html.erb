@@ -1,2 +1,64 @@
-<%= @destination.name %>
-<%= @destination.date %>
+<div>
+  <h1> Vos bons conseils pour <%= @destination.name %> </h1>
+  <h2> <%= @destination.date %> </h2>
+</div>
+
+<div class="results">
+  <h3>Vos bons plans resto</h3>
+    <% unless @destination.restaurants.empty? %>
+      <% @destination.restaurants.each do |restaurant| %>
+        <%= restaurant.name %>
+        <%= restaurant.address %>
+        <%= restaurant.review %>
+        <%= link_to "Effacer", destination_restaurant_path(@destination, restaurant), method: :delete %>
+      <% end %>
+    <% end %>
+</div>
+
+<h5>Ajouter un restaurant</h5>
+<%= simple_form_for [@destination, @restaurant] do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :review %>
+<%= f.button :submit %>
+<% end %>
+
+<div class="results">
+  <h3>Les meilleures trucs à faire</h3>
+    <% unless @destination.activities.empty? %>
+      <% @destination.activities.each do |activity| %>
+        <%= activity.name %>
+        <%= activity.address %>
+        <%= activity.review %>
+        <%= link_to "Effacer", destination_hotel_path(@destination, activity), method: :delete %>
+      <% end %>
+    <% end %>
+</div>
+
+<h5>Ajouter une activité</h5>
+<%= simple_form_for [@destination, @activity] do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :review %>
+<%= f.button :submit %>
+<% end %>
+
+<div class="results">
+  <h3>Vos bons plans hôtel</h3>
+    <% unless @destination.hotels.empty? %>
+      <% @destination.hotels.each do |hotel| %>
+        <%= hotel.name %>
+        <%= hotel.address %>
+        <%= hotel.review %>
+        <%= link_to "Effacer", destination_hotel_path(@destination, hotel), method: :delete %>
+      <% end %>
+    <% end %>
+</div>
+
+<h5>Ajouter un hôtel</h5>
+<%= simple_form_for [@destination, @hotel] do |f| %>
+<%= f.input :name %>
+<%= f.input :address %>
+<%= f.input :review %>
+<%= f.button :submit %>
+<% end %>
