@@ -1,6 +1,6 @@
 class ActivitiesController < ApplicationController
     def create
-    @activity = activity.new(activity_params)
+    @activity = Activity.new(activity_params)
     @activity.destination = Destination.find(params[:destination_id])
     if @activity.save
       redirect_to destination_path(params[:destination_id])
@@ -13,7 +13,7 @@ class ActivitiesController < ApplicationController
 
   def destroy
     @destination = Destination.find(params[:destination_id])
-    @activity = activity.find(params[:id])
+    @activity = Activity.find(params[:id])
     @activity.destroy
     redirect_to destination_path(@destination)
     flash[:notice] = "L'activité a été effacée."
