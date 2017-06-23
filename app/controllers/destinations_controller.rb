@@ -14,6 +14,19 @@ class DestinationsController < ApplicationController
     @restaurant = Restaurant.new
     @hotel = Hotel.new
     @activity = Activity.new
+    restaurant_hash = Gmaps4rails.build_markers(@destination.restaurants) do |restaurant, marker|
+      marker.lat restaurant.latitude
+      marker.lng restaurant.longitude
+    end
+    hotel_hash = Gmaps4rails.build_markers(@destination.hotels) do |hotel, marker|
+        marker.lat hotel.latitude
+        marker.lng hotel.longitude
+    end
+    activity_hash = Gmaps4rails.build_markers(@destination.activities) do |activity, marker|
+          marker.lat activity.latitude
+          marker.lng activity.longitude
+    end
+    @hash = restaurant_hash + hotel_hash + activity_hash
   end
 
   def search
