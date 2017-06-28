@@ -27,6 +27,9 @@ gem "geocoder"
 gem 'gmaps-autocomplete-rails'
 gem "coffee-rails"
 gem "gmaps4rails"
+gem 'yelp'
+gem "http"
+
 
 source 'https://rails-assets.org' do
   gem "rails-assets-underscore"
