@@ -105,6 +105,8 @@ GEM
     geocoder (1.4.4)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
+    gmaps-autocomplete-rails (0.3.1)
+      rails (>= 3.1.0)
     gmaps4rails (2.1.2)
     hashie (3.5.5)
     http-cookie (1.0.3)
@@ -271,6 +273,7 @@ DEPENDENCIES
   figaro
   font-awesome-sass
   geocoder
+  gmaps-autocomplete-rails
   gmaps4rails
   jbuilder (~> 2.0)
   jquery-rails

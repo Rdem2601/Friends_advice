@@ -24,6 +24,7 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "pundit"
 gem "geocoder"
+gem 'gmaps-autocomplete-rails'
 gem "coffee-rails"
 gem "gmaps4rails"
 
