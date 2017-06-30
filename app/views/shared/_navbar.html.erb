@@ -4,12 +4,14 @@
     <i class="fa fa-hand-o-right" aria-hidden="true" style="font-size: 40px"></i> Friend's Advice
   <% end %>
     <% if user_signed_in? %>
-      <div class="navbar-wagon-item navbar-wagon-button">
+      <div class="hidden-xs navbar-wagon-item navbar-wagon-button">
         <%= link_to "Mes destinations", destinations_path, style:"color: white; text-decoration: none" %>
       </div>
+      <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+      <% end %>
     <% else %>
-      <!-- Login text link -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: " hidden-xs navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 </div>
