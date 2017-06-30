@@ -5,3 +5,4 @@ class PagesController < ApplicationController
     @destinations = Destination.where(user_id: current_user)
   end
 end
+

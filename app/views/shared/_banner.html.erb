@@ -1,0 +1,28 @@
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.9&appId=149220388957178";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+funct
+</script>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://res.cloudinary.com/da6umoo9p/image/upload/v1498810968/barcelona-2390518_1280_vjpvtv.jpg');">
+  <div class="banner-content">
+    <h1>Il faut toujours écouter ses amis.</h1>
+    <% if !user_signed_in? %>
+      <p>Connectez-vous pour trouver les meilleurs conseils de vos proches.</p>
+       <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "fb-login-button banner-button"  %>
+    <% else %>
+      <h2>Chercher des conseils pour une destination</h2>
+      <%= simple_form_for(:search, on: :collection, url: search_destinations_path, method: :get) do |f| %>
+        <%= f.input :query, label: false %>
+        <%= f.button :submit, "Chercher" %>
+        <%= link_to "Ajouter une destination", new_destination_path %>
+      <% end %>
+    <% end %>
+
+  </div>
+</div>
