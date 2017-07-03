@@ -4,12 +4,23 @@
     <i class="fa fa-hand-o-right" aria-hidden="true" style="font-size: 40px"></i> Friend's Advice
   <% end %>
     <% if user_signed_in? %>
-      <div class="hidden-xs navbar-wagon-item navbar-wagon-button">
-        <%= link_to "Mes destinations", destinations_path, style:"color: white; text-decoration: none" %>
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li>
+          <%= link_to destinations_path do %>
+            <i class="fa fa-globe"></i> <%= t("destinations", default: "Mes destinations")%>
+          <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
       </div>
-      <%= link_to destroy_user_session_path, method: :delete do %>
-          <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-      <% end %>
+    </div>
     <% else %>
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: " hidden-xs navbar-wagon-item navbar-wagon-link" %>
     <% end %>
