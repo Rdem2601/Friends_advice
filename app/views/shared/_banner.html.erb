@@ -17,10 +17,11 @@ funct
        <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "fb-login-button banner-button"  %>
     <% else %>
       <h2>Chercher des conseils pour une destination</h2>
-      <%= simple_form_for(:search, on: :collection, url: search_destinations_path, method: :get) do |f| %>
-        <%= f.input :query, label: false %>
-        <%= f.button :submit, "Chercher" %>
-        <%= link_to "Ajouter une destination", new_destination_path %>
+        <div class="search-form">
+        <%= simple_form_for(:search, on: :collection, url: search_destinations_path, method: :get) do |f| %>
+          <%= f.input :query, label: false %>
+          <%= f.button :submit, "Chercher", class: "search-button" %>
+        </div>
       <% end %>
     <% end %>
 
