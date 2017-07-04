@@ -2,3 +2,14 @@
  * CSS code specific to home page
  * (margin/padding adjustments)
  * ------------------------------------- */
+
+.home-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  font-family: 'Alegreya Sans', sans-serif;
+  color:#000015;
+  padding: 10px;
+  margin-bottom: 5vh;
+}

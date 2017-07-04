@@ -14,7 +14,7 @@ funct
     <h1>Il faut toujours écouter ses amis.</h1>
     <% if !user_signed_in? %>
       <p>Connectez-vous pour trouver les meilleurs conseils de vos proches.</p>
-       <%= link_to "Facebook", user_facebook_omniauth_authorize_path, class: "fb-login-button banner-button"  %>
+      <%= link_to '<i class="fa fa-facebook"></i> Sign in with Facebook'.html_safe, user_facebook_omniauth_authorize_path, class: "btn btn-block btn-social btn-facebook text-center" %>
     <% else %>
       <h2>Chercher des conseils pour une destination</h2>
         <div class="search-form">
