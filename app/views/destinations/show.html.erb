@@ -16,7 +16,6 @@
       <% end %>
     <% end %>
 </div>
-
 <% if @destination.user == current_user %>
   <h5>Ajouter un restaurant</h5>
     <%= simple_form_for [@destination, @restaurant] do |f| %>
