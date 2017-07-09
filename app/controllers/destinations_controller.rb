@@ -27,6 +27,8 @@ class DestinationsController < ApplicationController
           marker.lng activity.longitude
     end
     @hash = restaurant_hash + hotel_hash + activity_hash
+    dte = eval(@destination.date)
+    @date = "#{dte[3]}/#{dte[2]}/#{dte[1]}"
   end
 
   def search

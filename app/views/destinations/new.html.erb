@@ -6,7 +6,7 @@
           <h2>Ajouter ici une nouvelle destination</h2>
             <%= simple_form_for(@destination) do |f| %>
               <%= f.input :name, placeholder: "Votre destination" %>
-              <%= f.input :date, as: :date, placeholder: "Date du voyage" %>
+              <%= f.input :date, as: :date %>
               <%= f.button :submit %>
             <% end %>
         </div>
