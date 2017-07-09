@@ -1,7 +1,16 @@
-<h2>Ajouter ici une nouvelle destination</h2>
-
-<%= simple_form_for(@destination) do |f| %>
-  <%= f.input :name %>
-  <%= f.input :date %>
-  <%= f.button :submit %>
-<% end %>
+<div class="new-destination-wrapper" style='background-image: linear-gradient(-225deg, rgba(52, 18, 0, 0.6) 0%, rgba(110, 55, 0, 0.4) 50%), url(http://res.cloudinary.com/da6umoo9p/image/upload/v1499611666/portugal-2423629_640_nlc2ml.jpg)'>
+  <div class="container login-container payment-form">
+    <div class="row">
+      <div class="col-xs-12 col-md-4 col-md-offset-4">
+        <div class="form-inputs text-center" style="margin-top: 100px; padding-bottom: 30px;">
+          <h2>Ajouter ici une nouvelle destination</h2>
+            <%= simple_form_for(@destination) do |f| %>
+              <%= f.input :name, placeholder: "Votre destination" %>
+              <%= f.input :date, placeholder: "Date du voyage" %>
+              <%= f.button :submit %>
+            <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
