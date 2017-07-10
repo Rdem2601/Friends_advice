@@ -1,6 +1,49 @@
+
+
 <%= render 'shared/banner' %>
 
+<div class="text-center">
+  <h2>Comment ça marche?</h2>
+</div>
 
-<h2>Créer une nouvelle destination</h2>
-<%= link_to "Créer", new_destination_path %>
-<h2>Chercher une destination</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-globe" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+         Recherchez la destination de votre prochain voyage
+       </h3>
+     </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-address-book" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+        Voyez lesquels de vos amis Facebook s'y sont déjà rendus
+        </h3>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+         <span class="fa fa-search" aria-hidden="true" style="font-size: 25px;">
+         </span>
+         <h3>
+          Consultez tous leurs bon plan en un coup d'oeil
+        </h3>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-share" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+          Une fois rentré, partagez à votre tour vos bons plans
+          <%= link_to "Ajouter une destination", new_destination_path %>
+        </h3>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,15 @@
+
+<h1>Voici tous vos amis qui sont déjà allés à <%= params[:search][:query] %></h1>
+
+
+<% @users.each do |user|%>
+  <% full_name = user.first_name + " " + user.last_name %>
+  <% if @my_array.include?(full_name) %>
+    <% @destinations.each do |destination| %>
+      <% if destination.user == user%>
+        <%=link_to "#{user.first_name} #{user.last_name}", destination_path(destination) %>
+      <% end %>
+    <% end %>
+  <% end %>
+<% end %>
+
