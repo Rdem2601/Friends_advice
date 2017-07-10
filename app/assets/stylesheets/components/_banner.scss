@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 
@@ -5,11 +6,18 @@
   color: #FFFFFF;
   text-align: center;
   height: 50vh;
+=======
+.banner {
+  color: white;
+  text-align: center;
+  height: 92vh;
+>>>>>>> c6383b0eefa2cf336a8fe751d6340a27f1d12b76
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: center;
+<<<<<<< HEAD
   background-position: center;
   background-image: linear-gradient(-225deg, rgba(84, 129, 206, 0.3) 0%, rgba(246, 189, 96, 0.2) 60%), url("http://res.cloudinary.com/da6umoo9p/image/upload/v1498130783/Kotor_and_Boka_kotorska_-_view_from_city_wall_bpdndz.jpg");
 }
@@ -68,10 +76,24 @@
   .slideRight{
     display: block;
   }
+=======
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.banner p {
+  font-size: 20px;
+  font-weight: lighter;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 20px;
+>>>>>>> c6383b0eefa2cf336a8fe751d6340a27f1d12b76
 }
 
 .search-form{
   display: flex;
+<<<<<<< HEAD
   flex-direction: row;
   justify-content: center;
   height:42px;
@@ -174,3 +196,14 @@
   background-color: #fc4646;
 }
 
+=======
+  //flex-direction: row;
+  justify-content: center;
+  height:42px;
+  margin-top: 30px;
+}
+
+.banner h1, h2 {
+  margin: 25px;
+}
+>>>>>>> c6383b0eefa2cf336a8fe751d6340a27f1d12b76

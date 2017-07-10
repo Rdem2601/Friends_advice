@@ -1,14 +1,48 @@
-<h1>Friends advice: il faut toujours écouter ses amis.</h1>
 
-<h2>Chercher des conseils pour une destination</h2>
-<%= simple_form_for(:search, on: :collection, url: search_destinations_path, method: :get) do |f| %>
-  <%= f.input :query, label: false %>
-  <%= f.button :submit, "Chercher" %>
-<% end %>
-<h2>Mes destinations</h2>
-<% @destinations.each do |destination| %>
-<%=link_to "#{destination.name}", destination_path(destination.id) %>
-<% end %>
-<h4>Créer une nouvelle destination</h4>
-<%= link_to "Créer", new_destination_path %>
+<%= render 'shared/banner' %>
 
+<div class="text-center">
+  <h2>Comment ça marche?</h2>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-globe" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+         Recherchez la destination de votre prochain voyage
+       </h3>
+     </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-address-book" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+        Voyez lesquels de vos amis Facebook s'y sont déjà rendus
+        </h3>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+         <span class="fa fa-search" aria-hidden="true" style="font-size: 25px;">
+         </span>
+         <h3>
+          Consultez tous leurs bon plan en un coup d'oeil
+        </h3>
+      </div>
+    </div>
+    <div class="col-xs-12 col-sm-3">
+      <div class="home-card">
+        <span class="fa fa-share" aria-hidden="true" style="font-size: 25px;">
+        </span>
+        <h3>
+          Une fois rentré, partagez à votre tour vos bons plans
+          <%= link_to "Ajouter une destination", new_destination_path %>
+        </h3>
+    </div>
+  </div>
+</div>
+</div>

@@ -23,6 +23,18 @@ gem 'fbgraph'
 gem 'cloudinary'
 gem 'carrierwave', '~> 0.11.2'
 gem "pundit"
+gem "geocoder"
+gem 'gmaps-autocomplete-rails'
+gem "coffee-rails"
+gem "gmaps4rails"
+gem 'yelp'
+gem "http"
+
+
+source 'https://rails-assets.org' do
+  gem "rails-assets-underscore"
+end
+
 
 group :development, :test do
   gem 'better_errors'
