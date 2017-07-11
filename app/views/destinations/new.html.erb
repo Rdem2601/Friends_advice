@@ -2,10 +2,10 @@
   <div class="container login-container payment-form">
     <div class="row">
       <div class="col-xs-12 col-md-4 col-md-offset-4">
-        <div class="form-inputs text-center" style="margin-top: 100px; padding-bottom: 30px;">
+        <div class="form-inputs text-center" style="margin-top: 100px; padding-bottom: 30px; color: white;">
           <h2>Ajouter ici une nouvelle destination</h2>
             <%= simple_form_for(@destination) do |f| %>
-              <%= f.input :name, placeholder: "Votre destination" %>
+              <%= f.input :name, :input_html =>{:id => 'gmaps-input-address'}, placeholder: "Votre destination" %>
               <%= f.input :date, as: :date %>
               <%= f.button :submit %>
             <% end %>
